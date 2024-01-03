@@ -1,0 +1,4 @@
+import pandas as pd
+
+df=pd.read_excel('12_04_03_E_자전거보관소정보.xlsx',index_col=0)
+df
