@@ -1,0 +1,11 @@
+import pandas as pd
+df_dict=dict()
+
+
+df_dict['이름']=['김홍익','최대학','박합정']
+df_dict['GPA']=[4.0,3.9,4.2]
+df_dict['소속']=['건축학부','영어영문학과','수학교육과']
+
+
+df = pd.DataFrame(df_dict)
+df
