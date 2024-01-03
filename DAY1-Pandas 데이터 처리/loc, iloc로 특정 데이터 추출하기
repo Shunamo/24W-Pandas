@@ -1,0 +1,34 @@
+import pandas as pd
+
+df_dict=dict()
+df_dict['이름']=['김홍익','최대학','박합정','이상수']
+df_dict['GPA']=[4.0,3.9,4.2,3.8]
+df_dict['소속']=['건축학부','영어영문학과','수학교육과','건축학부']
+df_dict['출석률']=['95%','98%','92%','89%']
+df_dict['등록학기']=[4,3,7,2]
+
+df=pd.DataFrame(df_dict)
+df
+
+#DataFrame에서 특정 열 추출 => df[열이름]
+# [1단계] 조건 변수 만들기
+# [2단계] loc 때리기
+
+# 건축학부가 아닌 사람만 뽑으려면?
+cond = df['소속'] !='건축학부'
+df_new = df.loc[cond]
+df_new
+
+# df의 GPA 열값이 4.0 이상이니?
+cond = df['GPA']>=4.0
+df.loc[cond]
+
+# 소속이 영어영문학과가 아니고 등록 학기가 3학기 이상인 학생
+cond1 = df['소속']!='영어영문학과'
+cond2 = df['등록학기']>=3
+
+cond = cond1&cond2
+df_new = df.loc[cond]
+
+df_new
+
